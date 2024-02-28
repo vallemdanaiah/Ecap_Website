@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .login-container {
+        width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+    
+        border: 5px solid #32c153;
+        border-radius: 30px;
+        background-color: #b82525;
+    }
+</style>
+<marquee behavior="scroll" direction="left" style="color:lawngreen;"><h1>WELCOME TO USERLOGIN</h1></marquee>
+
+<div class="login-container">
+    <h2>STUDENTLOGIN</h2>
+    <form action="{% url 'userlogin' %}" method="post">
+        {% csrf_token %}
+        <label>Username:</label>
+        <input type="text" name="loginid" required><br><BR>
+        <label>Password:</label>
+        <input type="password"  name="password" required><br><BR>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+
+{% endblock %}

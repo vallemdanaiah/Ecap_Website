@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .login-container {
+        width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+    
+        border: 5px solid #32c153;
+        border-radius: 30px;
+        background-color: #b82525;
+    }
+</style>
+<marquee behavior="scroll" direction="left" style="color:lawngreen;"><h1>WELCOME TO  ADMINLOGIN</h1></marquee>
+
+<div class="login-container">
+    <h2>ADMINLOGIN</h2>
+    <form acTION="{% url 'AdminLoginCheck' %}" method="post">
+        {% csrf_token %}
+        <label for="username">loginid:</label>
+        <input type="text" id="username" name="loginid" required><br><BR>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="pswd" required><br><BR>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+
+{% endblock %}

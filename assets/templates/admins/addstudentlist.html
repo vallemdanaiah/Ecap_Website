@@ -1,0 +1,50 @@
+{% extends 'admins/adminbase.html' %}
+{% block content %}
+<style>
+    .post-container {
+        border: 5px solid #000;
+        padding: 20px;
+        margin-bottom: 50px;
+        margin: 10px;
+        border-radius: 50px;
+        background-color: rgb(245, 235, 220);
+    }
+</style>
+<marquee behavior="scroll" direction="left" style="color:lawngreen;"><h1>WELCOME TO ADD_STUDENT_LIST</h1></marquee>
+<div class="post-container">
+
+<table  border="10px" align="center" >
+    <tr>
+        
+        <th>stdname</th>
+        <th>stdcourse</th>
+        <th>stdbranch</th>
+        <th>stdjoining</th>
+        <th>stdvillage</th>
+        <th>stdmcetrank</th>  
+        <th>stdemail</th>              
+        <th>stdphoto</th>
+    </tr>
+    {% for item in data %}
+    <tr>
+        
+        <td>{{ item.stdname }}</td>
+        <td>{{ item.stdcourse }}</td>
+        <td>{{ item.stdbranch }}</td>
+        <td>{{ item.stdjoining }}</td>
+        <td>{{ item.stdvillage }}</td>
+        <td>{{ item.stdmcetrank }}</td>
+        <td>{{ item.stdemail }}</td>
+        
+        <td><img src="{{ item.stdphoto.url }}" alt="{{ item.stdname }} Photo" width="60px" height="60px"></td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No results found.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+<br>
+{% endblock %}

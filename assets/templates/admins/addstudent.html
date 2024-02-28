@@ -1,0 +1,23 @@
+{% extends 'admins/adminbase.html' %}
+{% block content %}
+<style>
+    .post-container {
+        border: 5px solid #000;
+        padding: 20px;
+        margin-bottom: 50px;
+        margin: 10px;
+        border-radius: 50px;
+        background-color: beige;
+    }
+</style>
+<marquee behavior="scroll" direction="left" style="color:lawngreen;"><h1>WELCOME TO addstudent</h1></marquee>
+<div class="post-container">
+    <form method="post" align="center" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ msg }}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form> 
+
+</div>
+{% endblock %}
